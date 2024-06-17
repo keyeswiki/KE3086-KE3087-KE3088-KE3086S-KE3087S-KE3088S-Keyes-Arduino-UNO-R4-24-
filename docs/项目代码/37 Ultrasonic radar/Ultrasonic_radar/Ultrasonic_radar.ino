@@ -51,24 +51,24 @@ void setup() {
 void loop() {
   distance = checkdistance();//超声波测距
   displayFloatNum(distance); //数码管显示距离
-    if (distance <= 10) {   
-      analogWrite(LED_PIN, 255); // 更亮点亮LED.
-      delay(50);
-      analogWrite(LED_PIN, 0); // 熄灭LED.
-      delay(50);
-      tone(BUZZER_PIN, 262); //DO播放125ms
-      delay(125);
+  if (distance <= 10) {   
+    digitalWrite(LED_PIN, HIGH); // 点亮LED.
+    delay(50);
+    digitalWrite(LED_PIN, LOW); // 熄灭LED.
+    delay(50);
+    tone(BUZZER_PIN, 262); //DO播放125ms
+    delay(125);
 
-  } else if (distance > 10 && distance <= 20) {
-      analogWrite(LED_PIN, 170); // 正常点亮LED.
-      delay(500);
-      analogWrite(LED_PIN, 0); // 熄灭LED.
-      delay(500);
-      tone(BUZZER_PIN, 349); //Fa播放500ms
-      delay(500);
+} else if (distance > 10 && distance <= 20) {
+    digitalWrite(LED_PIN, HIGH); // 点亮LED.
+    delay(500);
+    digitalWrite(LED_PIN, LOW); // 熄灭LED.
+    delay(500);
+    tone(BUZZER_PIN, 349); //Fa播放500ms
+    delay(500);
 
  } else {
-    analogWrite(LED_PIN, 70); // 微弱点亮LED.
+    digitalWrite(LED_PIN, HIGH); // 点亮LED.
     tone(BUZZER_PIN, 494); //Si播放1000ms
     delay(1000);
    }
