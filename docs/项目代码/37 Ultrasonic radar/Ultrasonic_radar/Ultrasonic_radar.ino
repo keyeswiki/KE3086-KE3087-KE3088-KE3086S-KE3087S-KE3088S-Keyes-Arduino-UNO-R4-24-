@@ -67,11 +67,11 @@ void loop() {
     tone(BUZZER_PIN, 349); //Fa播放500ms
     delay(500);
 
-} else {
+ } else {
     digitalWrite(LED_PIN, HIGH); // 点亮LED.
     tone(BUZZER_PIN, 494); //Si播放1000ms
     delay(1000);
-  }
+   }
 }
 
 void displayFloatNum(float distance){
